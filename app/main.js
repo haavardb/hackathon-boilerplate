@@ -1,3 +1,6 @@
+import TwitterService from './services/TwitterService.js';
+import TrumpService from './services/TrumpService.js';
+
 /*
   If you want to use React
 */
@@ -25,6 +28,16 @@
 //     render(newApp);
 //   });
 // }
+
+// const ts = new TwitterService();
+// ts.get("").then((data) => {
+//   console.log(data);
+// });
+
+const t2 = new TrumpService();
+t2.get("").then((data) => {
+  console.log(data);
+});
 
 
 /*
