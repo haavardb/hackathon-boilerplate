@@ -26,23 +26,24 @@ const config = {
 
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'build'),
+    contentBase: resolve(__dirname, 'app'),
     historyApiFallback: true,
-    publicPath: '/'
+    publicPath: '/',
   },
-  
+
   resolve: {
     extensions: ['.js', '.jsx'],
   },
 
   module: {
     rules: [
-      {
-        enforce: "pre",
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
+      // Do we need this?
+      // {
+      //   enforce: "pre",
+      //   test: /\.jsx?$/,
+      //   exclude: /node_modules/,
+      //   loader: "eslint-loader"
+      // },
       {
         test: /\.jsx?$/,
         loaders: [
@@ -64,7 +65,7 @@ const config = {
               },
             },
           ],
-          publicPath: '../'
+          publicPath: '../',
         })),
       },
       {
@@ -76,8 +77,8 @@ const config = {
               limit: 8192,
               mimetype: 'image/png',
               name: 'images/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -86,9 +87,9 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[ext]'
-            }
-          }
+              name: 'fonts/[name].[ext]',
+            },
+          },
         ],
       },
       {
@@ -100,8 +101,8 @@ const config = {
               limit: 8192,
               mimetype: 'application/font-woff',
               name: 'fonts/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -113,8 +114,8 @@ const config = {
               limit: 8192,
               mimetype: 'application/octet-stream',
               name: 'fonts/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
       {
@@ -126,11 +127,11 @@ const config = {
               limit: 8192,
               mimetype: 'image/svg+xml',
               name: 'images/[name].[ext]',
-            }
-          }
+            },
+          },
         ],
       },
-    ]
+    ],
   },
 
   plugins: [
@@ -140,7 +141,7 @@ const config = {
         eslint: {
           configFile: resolve(__dirname, '.eslintrc'),
           cache: false,
-        }
+        },
       },
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
