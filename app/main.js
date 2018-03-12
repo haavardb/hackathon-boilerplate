@@ -43,7 +43,13 @@ t2.get("").then((data) => {
 /*
   If you want to use Jquery
 */
-// import $ from 'jquery';
-// $(document).ready(() => {
-//   $('body').addClass("hello-world");
-// });
+import $ from 'jquery';
+$(document).ready(() => {
+  fetch('http://localhost:3000/api')
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      console.log(result);
+    })
+});

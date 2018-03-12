@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "dev-server": "nodemon ./server/server.js",
     "clean": "rimraf dist",
     "production": "cross-env npm run clean && webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./app/**/**.js",
@@ -34,8 +35,11 @@
     }
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "cross-env": "5.1.4",
+    "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "mime": "^2.2.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-hot-loader": "4.0.0",
