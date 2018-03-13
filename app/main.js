@@ -1,6 +1,10 @@
 import TwitterService from './services/TwitterService.js';
 import TrumpService from './services/TrumpService.js';
 
+TwitterService.getTimeLine("realdonaldtrump").then((data) => {
+  console.log(data);
+});
+
 /*
   If you want to use React
 */
@@ -30,28 +34,14 @@ import TrumpService from './services/TrumpService.js';
 // }
 
 
-TwitterService.get("").then((data) => {
-  console.log(data);
-});
-
-
-TrumpService.get("").then((data) => {
-  console.log(data);
-});
-
-
 /*
   If you want to use Jquery
 */
 import $ from 'jquery';
 
-// $(document).ready(() => {
-//   $('body').html('<p>jQuery aktivert</p>');
-//   fetch('http://localhost:3000/api')
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((result) => {
-//       console.log(result);
-//     });
-// });
+$(document).ready(() => {
+  $('body').html('<p>jQuery aktivert</p>');
+  TrumpService.getRandomQuote().then((data) => {
+    console.log(data);
+  });
+});
