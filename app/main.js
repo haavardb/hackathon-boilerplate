@@ -29,10 +29,10 @@ import TrumpService from './services/TrumpService.js';
 //   });
 // }
 
-// const ts = new TwitterService();
-// ts.get("").then((data) => {
-//   console.log(data);
-// });
+const ts = new TwitterService();
+ts.get("").then((data) => {
+  console.log(data);
+});
 
 const t2 = new TrumpService();
 t2.get("").then((data) => {
@@ -45,13 +45,13 @@ t2.get("").then((data) => {
 */
 import $ from 'jquery';
 
-$(document).ready(() => {
-  $('body').html('<p>jQuery aktivert</p>');
-  fetch('http://localhost:3000/api')
-    .then((response) => {
-      return response.json();
-    })
-    .then((result) => {
-      console.log(result);
-    });
-});
+// $(document).ready(() => {
+//   $('body').html('<p>jQuery aktivert</p>');
+//   fetch('http://localhost:3000/api')
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((result) => {
+//       console.log(result);
+//     });
+// });
