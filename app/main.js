@@ -31,12 +31,14 @@
   If you want to use Jquery
 */
 import $ from 'jquery';
+
 $(document).ready(() => {
+  $('body').html('<p>jQuery aktivert</p>');
   fetch('http://localhost:3000/api')
     .then((response) => {
       return response.json();
     })
     .then((result) => {
       console.log(result);
-    })
+    });
 });
