@@ -11,9 +11,7 @@
     "lint": "eslint ./app/**/**.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "coverage": "jest --coverage",
-    "precommit": "cross-env npm run lint && npm test",
-    "prepush": "cross-env npm run lint && npm test"
+    "coverage": "jest --coverage"
   },
   "author": "Kliment Petrov <kleopetroff@gmail.com>",
   "license": "MIT",
