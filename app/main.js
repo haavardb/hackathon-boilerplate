@@ -29,13 +29,13 @@ import TrumpService from './services/TrumpService.js';
 //   });
 // }
 
-const ts = new TwitterService();
-ts.get("").then((data) => {
+
+TwitterService.get("").then((data) => {
   console.log(data);
 });
 
-const t2 = new TrumpService();
-t2.get("").then((data) => {
+
+TrumpService.get("").then((data) => {
   console.log(data);
 });
 

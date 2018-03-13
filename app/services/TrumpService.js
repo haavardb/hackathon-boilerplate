@@ -1,8 +1,8 @@
 import ApiService from "./ApiService.js";
 
-class TrumpService {
+const TrumpService = {
 
-  get() {
+  get: () => {
     return ApiService.get({
       url: 'https://api.tronalddump.io/random/quote'
     });
