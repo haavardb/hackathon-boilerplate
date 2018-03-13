@@ -1,13 +1,12 @@
-
-import ApiService from "./ApiService.js";
+import ApiService from './ApiService';
 
 const TwitterService = {
 
   get: () => {
     return ApiService.get({
-      url: 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=realdonaldtrump&count=2'
+      url: 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=realdonaldtrump&count=2',
     });
-  }
+  },
 };
 
 export default TwitterService;

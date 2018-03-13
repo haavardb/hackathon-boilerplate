@@ -8,7 +8,7 @@ const pxService = {
 
     return ApiService.get({
       url: 'https://api.500px.com/v1/photos/search',
-      consumer_key: 'Z2a6nyRjDzrMHs7QvWq0pimix4w4ce7xZvwBb6K0', // Ask me (Håvard) for it
+      consumer_key: '', // Ask me (Håvard) for it
       term: str,
       image_size: '20,1600',
       rpp: limit,
@@ -22,7 +22,7 @@ const pxService = {
 
     return ApiService.get({
       url: 'https://api.500px.com/v1/photos/search',
-      consumer_key: 'Z2a6nyRjDzrMHs7QvWq0pimix4w4ce7xZvwBb6K0', // Ask me (Håvard) for it
+      consumer_key: '', // Ask me (Håvard) for it
       image_size: '20,1600',
       geo: `${lat},${long},${radius}`,
       rpp: limit,
@@ -36,7 +36,7 @@ const pxService = {
 
     return ApiService.get({
       url: 'https://api.500px.com/v1/photos',
-      consumer_key: 'Z2a6nyRjDzrMHs7QvWq0pimix4w4ce7xZvwBb6K0', // Ask me (Håvard) for it
+      consumer_key: '', // Ask me (Håvard) for it
       image_size: '20,1600',
       feature: 'popular',
       rpp: limit,
