@@ -3,7 +3,7 @@ import ApiService from './ApiService';
 const WeatherService = {
 
   // API DOCS
-  // https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
+  // https://www.weatherbit.io/api/weather-history-hourly
 
   getHistoricalWeatherAt: (startdate, enddate, city, country) => {
     return ApiService.get({
