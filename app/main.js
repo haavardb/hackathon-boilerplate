@@ -2,6 +2,7 @@ import TwitterService from './services/TwitterService';
 import TrumpService from './services/TrumpService';
 import PxService from './services/500pxService';
 import WeatherService from './services/WeatherService';
+import GoogleCloudService from './services/GoogleCloudService';
 
 TwitterService.getTimeLine("realdonaldtrump").then((data) => {
   console.log(data);
@@ -34,6 +35,11 @@ TwitterService.getTimeLine("realdonaldtrump").then((data) => {
 //     render(newApp);
 //   });
 // }
+
+GoogleCloudService.getSentiment("All across this nation, we pray for our country and we THANK GOD for our United States Marines! Thank you. God Bless You. And God Bless America!").then((data) => {
+  console.log(data);
+});
+
 WeatherService.getHistoricalWeatherAt("2018-03-10", "2018-03-11", "Oslo").then((data) => {
   console.log(data);
 });
