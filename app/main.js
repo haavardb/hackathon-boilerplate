@@ -1,5 +1,8 @@
-import TwitterService from './services/TwitterService.js';
-import TrumpService from './services/TrumpService.js';
+import TwitterService from './services/TwitterService';
+import TrumpService from './services/TrumpService';
+import PxService from './services/500pxService';
+
+// import $ from 'jquery'; // If you want to use jQuery
 
 TwitterService.getTimeLine("realdonaldtrump").then((data) => {
   console.log(data);
@@ -34,10 +37,27 @@ TwitterService.getTimeLine("realdonaldtrump").then((data) => {
 // }
 
 
-/*
-  If you want to use Jquery
-*/
-import $ from 'jquery';
+TwitterService.get("").then((data) => {
+  console.log(data);
+});
+
+TrumpService.get("").then((data) => {
+  console.log(data);
+});
+
+PxService.search("developer").then((data) => {
+  console.log(data);
+});
+
+// lat, long, radius. This finds images within 20 km of the Deloitte building
+PxService.findbylatlong(59.907049, 10.760147, 20).then((data) => {
+  console.log(data);
+});
+
+PxService.findPopular().then((data) => {
+  console.log(data);
+});
+
 
 $(document).ready(() => {
   $('body').html('<p>jQuery aktivert</p>');

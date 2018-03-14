@@ -1,5 +1,4 @@
-
-import ApiService from "./ApiService.js";
+import ApiService from './ApiService';
 
 const TwitterService = {
 
@@ -10,7 +9,7 @@ const TwitterService = {
     return ApiService.get({
       url: 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + usr + '&count=10'
     });
-  }
+  },
 };
 
 export default TwitterService;
