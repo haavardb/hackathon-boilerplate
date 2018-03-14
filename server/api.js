@@ -44,8 +44,6 @@ router.post('/', (req, res) => {
     }
   });
 
-  console.log(req.query);
-
   req.pipe(request(url)).pipe(res);
 });
 

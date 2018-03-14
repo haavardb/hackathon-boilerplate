@@ -60,7 +60,7 @@ PxService.findPopular().then((data) => {
 
 import $ from 'jquery'; // If you want to use jQuery
 $(document).ready(() => {
-  $('body').html('<p>jQuery aktivert</p>');
+  $('body').append('<p>jQuery aktivert</p>');
   TrumpService.getRandomQuote().then((data) => {
     console.log(data);
   });
