@@ -1,8 +1,7 @@
 import TwitterService from './services/TwitterService';
 import TrumpService from './services/TrumpService';
 import PxService from './services/500pxService';
-
-// import $ from 'jquery'; // If you want to use jQuery
+import WeatherService from './services/WeatherService';
 
 TwitterService.getTimeLine("realdonaldtrump").then((data) => {
   console.log(data);
@@ -35,13 +34,7 @@ TwitterService.getTimeLine("realdonaldtrump").then((data) => {
 //     render(newApp);
 //   });
 // }
-
-
-TwitterService.get("").then((data) => {
-  console.log(data);
-});
-
-TrumpService.get("").then((data) => {
+WeatherService.getHistoricalWeatherAt("2018-03-10", "2018-03-11", "Oslo").then((data) => {
   console.log(data);
 });
 
@@ -59,6 +52,7 @@ PxService.findPopular().then((data) => {
 });
 
 
+import $ from 'jquery'; // If you want to use jQuery
 $(document).ready(() => {
   $('body').html('<p>jQuery aktivert</p>');
   TrumpService.getRandomQuote().then((data) => {

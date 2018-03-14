@@ -10,6 +10,10 @@ router.get('/', (req, res) => {
     req.headers.Authorization = 'Bearer AAAAAAAAAAAAAAAAAAAAAE6o4wAAAAAAzJnqNSWEPTmAlSm1zVq5%2BjfQFBY%3D4b2iipUm42TKIoqSUnV0bDBA96ZcDOVZu7IVUSJbXb1TWSbBgc';
   }
 
+  if (url.indexOf('weatherbit') > -1) {
+    req.query.key = 'c1035535f2744229bd79040897c131c3';
+  }
+
   // Map other queryparameters to final request
   Object.keys(req.query).forEach((key) => {
     if (key !== 'url') {
