@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   let url = `${req.query.url}?`;
 
   if (url.indexOf('twitter') > -1) {
-    req.headers.Authorization = 'UPON REQUEST';
+    req.headers.Authorization = 'Bearer AAAAAAAAAAAAAAAAAAAAAE6o4wAAAAAAzJnqNSWEPTmAlSm1zVq5%2BjfQFBY%3D4b2iipUm42TKIoqSUnV0bDBA96ZcDOVZu7IVUSJbXb1TWSbBgc';
   }
 
   if (url.indexOf('weatherbit') > -1) {
