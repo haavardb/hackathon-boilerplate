@@ -4,22 +4,24 @@ class ResultItem extends React.Component {
 
   render() {
 
-    let image = this.props.mood > 0 ? <img src="images/trump-happy.jpg" alt="happy trump"/> : <img src="images/trump-angry.jpg" alt="angry trump"/>;
-    
+    let image = this.props.tweet.sentimentScore > 0 ? <img src="images/trump-happy.jpg" alt="happy trump"/> : <img src="images/trump-angry.jpg" alt="angry trump"/>;
+
     return (
-      <div>
-        <p>{this.props.tweet.text}</p>
+      <div className="result-item">
+        <p className="text">{this.props.tweet.text}</p>
         <div className="date">{this.props.tweet.date}</div>
         <div className="location">{this.props.tweet.location}</div>
-        <div>
-          <h3>Mood</h3>
-          {this.props.mood}
-          {image}
-        </div>
-        <div>
-          <h3>Weather</h3>
-          {this.props.weather.text}
-          <img src={"images/" + this.props.weather.type + ".jpg"} alt={this.props.weather.type}/>
+        <div className="comparison">
+          <div className="mood">
+            <h3>Mood</h3>
+            <div>{this.props.tweet.sentimentScore}</div>
+            {image}
+          </div>
+          <div className="weather">
+            <h3>Weather</h3>
+            <div>{this.props.weather.text}</div>
+            <img src={"images/" + this.props.weather.type + ".jpg"} alt={this.props.weather.type}/>
+          </div>
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ const TwitterService = {
 
   getTimeLine: (usr) => {
     return ApiService.get({
-      url: 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + usr + '&count=10'
+      url: 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=' + usr + '&count=40' //&max_id=964151653669711872'
     });
   },
 };
