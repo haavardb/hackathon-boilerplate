@@ -25,6 +25,7 @@ h2 {
 
 .result-item {
   margin-bottom: 50px;
+  text-align: center;
 }
 
   .text {
@@ -35,11 +36,22 @@ h2 {
     line-height: 1.2em;
   }
 
+  .date, .location {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .location {
+    // text-align: center;
+    margin-left: 10px;
+  }
+
 .comparison {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
+  margin: 40px 0 50px 0;
 }
 
   .mood, .weather {

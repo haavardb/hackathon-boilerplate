@@ -33,6 +33,7 @@ class App extends React.Component {
       let locations = [];
 
       for (var i = 0; i < data.length; i++) {
+
         let tweet = data[i];
         cloc = data[i].user.location;
         cdate = moment(data[i].created_at).format("YYYY-MM-DD");
@@ -49,43 +50,46 @@ class App extends React.Component {
         GoogleCloudService.getSentiment(text).then((gdata) => {
           tweet.sentimentScore = gdata.documentSentiment.score;
           tweet.sentimentMagnitude = gdata.documentSentiment.magnitude;
-          tweets.push(tweet)
+
+          let tweets = this.state.tweets;
+          for (var i = 0; i < tweets.length; i++) {
+            if(tweets[i].created_at === tweet.created_at) {
+              tweets[i] = tweet;
+            }
+          }
 
           this.setState({tweets: tweets});
         });
 
         if(cloc !== loc || date !== cdate) {
-          console.log("call API with " + loc + " / " + date + " to " + moment(date).add("days",1).format("YYYY-MM-DD") + " // " + data[i].text);
 
           if(cloc !== loc) {
             locations.push(cloc);
             loc = cloc;
           }
 
-          if(date != cdate) {
-
+          if(date !== cdate) {
+            let mydate = cdate
             WeatherService.getHistoricalWeatherAt(cdate, moment(cdate).add("days",1).format("YYYY-MM-DD"), loc).then((data) => {
-              // console.log("weather");
-              // console.log(data);
+
               weathers.push(data);
 
               let tweets = this.state.tweets;
               for (var i = 0; i < tweets.length; i++) {
-                // console.log(moment(tweets[i].created_at).format("YYYY-MM-DD") + " vs. " + cdate);
-                if(moment(tweets[i].created_at).format("YYYY-MM-DD") == cdate){
-                  // console.log("is similar");
+                if(moment(tweets[i].created_at).format("YYYY-MM-DD") == mydate){
                   tweets[i].weather = data;
                 }
               }
 
               this.setState({weather: weathers, tweets: tweets});
-              // console.dir(this.state);
             });
 
             date = cdate;
           }
         }
       }
+
+      this.setState({tweets: data});
 
       console.log("tweets from " + fdate + " to " + ldate + " from " + locations.length + " locations");
 

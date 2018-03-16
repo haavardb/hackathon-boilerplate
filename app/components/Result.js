@@ -18,7 +18,7 @@ class Result extends React.Component {
 
       // console.log("weather " + this.props.data.weather.length);
 
-      return <ResultItem key={i} tweet={r} weather={{text: "Thunderclouds", type: "sun"}} />
+      return <ResultItem key={i} tweet={r} />
     });
 
     return (
