@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  let url = `${req.query.url}?`;
+  let url = `${req.query.url}${req.query.url.includes('?') ? '&' : '?'}`;
 
   if (url.indexOf('twitter') > -1) {
     req.headers.Authorization = 'UPON REQUEST';
@@ -12,6 +12,11 @@ router.get('/', (req, res) => {
 
   if (url.indexOf('weatherbit') > -1) {
     req.query.key = 'c1035535f2744229bd79040897c131c3';
+  }
+
+  if (url.indexOf('livescore') > -1) {
+    req.query.key = 'UPON REQUEST';
+    req.query.secret = 'UPON REQUEST';
   }
 
   if (url.indexOf('googleapis') > -1) {
@@ -25,6 +30,8 @@ router.get('/', (req, res) => {
       url = `${url}${key}=${val}&`;
     }
   });
+
+  console.log(url);
 
   req.pipe(request(url)).pipe(res);
 });
