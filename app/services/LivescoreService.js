@@ -3,7 +3,7 @@ import ApiService from './ApiService';
 const LivescoreService = {
 
   // API DOCS
-  // https://docs.tronalddump.io/#introduction
+  // http://livescore-api.com/worldcup/
 
   getGroupIdForGroup: (group) => {
     switch (group) {
